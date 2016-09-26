@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<!--script that handles the calculations  -->
+<script type="text/javascript">
+function calculate() {
+	var firstNumber, secondNumber, dropDownSelectedIndex;
+	
+	firstNumber = Number(document.getElementById ('firstBox').value);
+	secondNumber= Number(document.getElementById ('secondBox').value);
+	dropDownSelectedIndex= document.getElementById ('dropDown').selectedIndex
+	
+	if (dropDownSelectedIndex==0){ 
+		document.getElementById ('resultBox').innerHTML=firstNumber + secondNumber;
+		
+	}else if(dropDownSelectedIndex==1){
+		document.getElementById ('resultBox').innerHTML=firstNumber - secondNumber;
+		
+	}else if(dropDownSelectedIndex==2){
+		document.getElementById ('resultBox').innerHTML=firstNumber / secondNumber;
+		
+	}else if(dropDownSelectedIndex==3){
+		document.getElementById ('resultBox').innerHTML=firstNumber * secondNumber;
+		
+	}
+	
+	//alert ("the first number is " + firstNumber + "\nthe second number is "+ secondNumber+"\nthis is a dropdown test "+dropDownSelectedIndex);
+}
+
+</script>
+
+<body>
+<h1>Application 1</h1>
+<hr/>
+<input type="text" maxlength ='6' size='6' id = 'firstBox'>
+<!-- These are available options -->
+<select  id= 'dropDown'>
+	<option>+</option>
+	<option>-</option>
+	<option>/</option>
+	<option>x</option>
+</select>
+<input type="text" maxlength ='6' size='6' id ='secondBox'>
+<button onclick="calculate()">=</button>
+
+<B id = 'resultBox'>Result</B>
+<hr/>
+&copy; Melissa A. Gharseldin
+</body>
+</html>
